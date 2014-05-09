@@ -34,4 +34,12 @@ Describe "Quiz" {
     It "should return number if the number is NOT times of 3" {
         SayFizz 5 | Should Be 5
     }
+
+    It "should return Buzz if the number is times of 5" {
+        SayBuzz 35 | Should Be "Buzz"
+    }
+
+    It "should return number if the number is NOT times of 5" {
+        SayBuzz 12 | Should Be 12
+    }
 }

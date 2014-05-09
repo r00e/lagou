@@ -15,3 +15,12 @@ function SayFizz($num) {
         return $num;
     }
 }
+
+function SayBuzz($num) {
+    if(NumberIsTimesOfSpecified -num $num -specified 5){
+        return "Buzz";
+    }
+    else{
+        return $num;
+    }
+}
