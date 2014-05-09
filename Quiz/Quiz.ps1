@@ -24,3 +24,12 @@ function SayBuzz($num) {
         return $num;
     }
 }
+
+function SayWhizz($num) {
+    if(NumberIsTimesOfSpecified -num $num -specified 7){
+        return "Whizz";
+    }
+    else{
+        return $num;
+    }
+}
