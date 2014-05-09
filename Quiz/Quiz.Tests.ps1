@@ -18,4 +18,12 @@ Describe "Quiz" {
     It "should return False if the number is NOT times of 5" {
         NumberIsTimesOfSpecified -num 3 -specified 5 | Should Be $False
     }
+
+    It "should return True if the number is times of 7" {
+        NumberIsTimesOfSpecified -num 14 -specified 7 | Should Be $True
+    }
+
+    It "should return False if the number is NOT times of 5" {
+        NumberIsTimesOfSpecified -num 27 -specified 7 | Should Be $False
+    }
 }
