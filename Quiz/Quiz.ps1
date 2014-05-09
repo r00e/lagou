@@ -12,7 +12,7 @@ function SayFizz($num) {
         return "Fizz";
     }
     else{
-        return $num;
+        return $null;
     }
 }
 
@@ -21,7 +21,7 @@ function SayBuzz($num) {
         return "Buzz";
     }
     else{
-        return $num;
+        return $null;
     }
 }
 
@@ -30,6 +30,14 @@ function SayWhizz($num) {
         return "Whizz";
     }
     else{
-        return $num;
+        return $null;
     }
+}
+
+function Say($num) {
+    $str = "";
+    
+    $str = $str + (SayFizz $num) + (SayBuzz $num) + (SayWhizz $num);
+
+    return $str;
 }

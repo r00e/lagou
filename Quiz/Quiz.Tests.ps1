@@ -32,7 +32,7 @@ Describe "Quiz" {
     }
 
     It "should return number if the number is NOT times of 3" {
-        SayFizz 5 | Should Be 5
+        SayFizz 5 | Should Be $null
     }
 
     It "should return Buzz if the number is times of 5" {
@@ -40,7 +40,7 @@ Describe "Quiz" {
     }
 
     It "should return number if the number is NOT times of 5" {
-        SayBuzz 12 | Should Be 12
+        SayBuzz 12 | Should Be $null
     }
 
     It "should return Whizz if the number is times of 7" {
@@ -48,6 +48,26 @@ Describe "Quiz" {
     }
 
     It "should return number if the number is NOT times of 7" {
-        SayWhizz 100 | Should Be 100
+        SayWhizz 100 | Should Be $null
+    }
+
+    It "should return FizzBuzz if the number is both times of 3 and 5" {
+        Say 30 | Should Be "FizzBuzz"
+    }
+
+    It "should return FizzWhizz if the number is both times of 3 and 7" {
+        Say 42 | Should Be "FizzWhizz"
+    }
+
+    It "should return BuzzWhizz if the number is both times of 5 and 7" {
+        Say 35 | Should Be "BuzzWhizz"
+    }
+
+    It "should return FizzBuzzWhizz if the number is all times of 3, 5 and 7" {
+        Say 105 | Should Be "FizzBuzzWhizz"
+    }
+
+    It "should return Fizz if the number is only times of 3" {
+        Say 24 | Should Be "Fizz"
     }
 }
