@@ -6,3 +6,12 @@
         return $false;
     }
 }
+
+function SayFizz($num) {
+    if(NumberIsTimesOfSpecified -num $num -specified 3){
+        return "Fizz";
+    }
+    else{
+        return $num;
+    }
+}
