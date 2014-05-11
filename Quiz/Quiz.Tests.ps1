@@ -3,6 +3,7 @@ $here = Split-Path -Parent $MyInvocation.MyCommand.Path
 
 Describe "Quiz" {
 
-    It "" {
+    It "should return number itself" {
+        Say 1 | Should Be 1
     }
 }
