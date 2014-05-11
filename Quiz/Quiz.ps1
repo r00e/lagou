@@ -1,19 +1,25 @@
 ﻿function Say($num){
-    $result = SayFizzForTimesOf3($num)
+    $result = SayStringForTimesOfSpecifiedNumber($num)
     return $result
 }
 
-function SayFizzForTimesOf3($num){
-    if(IsTimesOf3($num)){
+function SayStringForTimesOfSpecifiedNumber($num){
+    if(IsTimesOfSpecifiedNubmer -num $num -spec 3){
         return "Fizz"
+    }
+    if(IsTimesOfSpecifiedNubmer -num $num -spec 5){
+        return "Buzz"
+    }
+    if(IsTimesOfSpecifiedNubmer -num $num -spec 7){
+        return "Whizz"
     }
     else{
         return $num
     }
 }
 
-function IsTimesOf3($num){
-    if( ($num % 3) -eq 0){
+function IsTimesOfSpecifiedNubmer($num, $spec){
+    if($num % $spec -eq 0){
         return $true
     }
     else{
