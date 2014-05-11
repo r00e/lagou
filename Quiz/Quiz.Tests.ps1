@@ -23,7 +23,7 @@ Describe "Quiz" {
         NumberIsTimesOfSpecified -num 14 -specified 7 | Should Be $True
     }
 
-    It "should return False if the number is NOT times of 5" {
+    It "should return False if the number is NOT times of 7" {
         NumberIsTimesOfSpecified -num 27 -specified 7 | Should Be $False
     }
 
@@ -69,5 +69,9 @@ Describe "Quiz" {
 
     It "should return Fizz if the number is only times of 3" {
         Say 24 | Should Be "Fizz"
+    }
+
+    It "should return number if the number is none times of 3, 5 or 7" {
+        Say 101 | Should Be 101
     }
 }

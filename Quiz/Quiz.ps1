@@ -37,7 +37,11 @@ function SayWhizz($num) {
 function Say($num) {
     $str = "";
     
-    $str = $str + (SayFizz $num) + (SayBuzz $num) + (SayWhizz $num);
-
-    return $str;
+    if( (NumberIsTimesOfSpecified -num $num -specified 3) -or (NumberIsTimesOfSpecified -num $num -specified 5) -or (NumberIsTimesOfSpecified -num $num -specified 7) ) {
+        $str = $str + (SayFizz $num) + (SayBuzz $num) + (SayWhizz $num);
+        return $str;
+    }
+    else{
+        return $num;
+    }
 }
