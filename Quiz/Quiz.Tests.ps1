@@ -21,5 +21,17 @@ Describe "Quiz" {
 
     It "should return FizzBuzz for the times of both 3 and 5"{
         Say 15 | Should Be "FizzBuzz"
+    }   
+
+    It "should return FizzWhizz for the times of both 3 and 7"{
+        Say 21 | Should Be "FizzWhizz"
+    }    
+
+    It "should return BuzzWhizz for the times of both 5 and 7"{
+        Say 35 | Should Be "BuzzWhizz"
+    }    
+
+    It "should return FizzBuzzWhizz for the times of both 3, 5 and 7"{
+        Say 105 | Should Be "FizzBuzzWhizz"
     }    
 }
