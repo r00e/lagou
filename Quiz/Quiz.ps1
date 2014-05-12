@@ -5,9 +5,7 @@
 function TransferNumIfNeeded($num){
     $result=""
 
-    $result += GetStringForTimesof3($num)
-    $result += GetStringForTimesof5($num)
-    $result += GetStringForTimesof7($num)
+    @(3, 5, 7) | %{ $result += GetStringForTimesofSpecifiedNumber -num $num -spec $_}
 
     if($result -eq ""){
         $result = $num
@@ -16,29 +14,19 @@ function TransferNumIfNeeded($num){
     return $result
 }
 
+function GetStringForTimesofSpecifiedNumber($num, $spec){
+    switch($spec){
+        3 { if(IsTimesOfSpecifiedNubmer -num $num -spec 3){ return "Fizz" } }
+        5 { if(IsTimesOfSpecifiedNubmer -num $num -spec 5){ return "Buzz" } }
+        7 { if(IsTimesOfSpecifiedNubmer -num $num -spec 7){ return "Whizz" } }
+    }
+}
+
 function IsTimesOfSpecifiedNubmer($num, $spec){
     if($num % $spec -eq 0){
         return $spec
     }
     else{
         return $false
-    }
-}
-
-function GetStringForTimesof3($num){
-    if(IsTimesOfSpecifiedNubmer -num $num -spec 3){
-        return "Fizz"
-    }
-}
-
-function GetStringForTimesof5($num){
-    if(IsTimesOfSpecifiedNubmer -num $num -spec 5){
-        return "Buzz"
-    }
-}
-
-function GetStringForTimesof7($num){
-    if(IsTimesOfSpecifiedNubmer -num $num -spec 7){
-        return "Whizz"
     }
 }
