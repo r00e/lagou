@@ -1,11 +1,13 @@
-﻿function Say($num){
+﻿$SpecifiedNum = @{"3"="Fizz"; "5"="Buzz"; "7"="Whizz"}
+
+function Say($num){
     return TransferNumIfNeeded($num)
 }
 
 function TransferNumIfNeeded($num){
     $result=""
 
-    @(3, 5, 7) | %{ $result += GetStringForTimesofSpecifiedNumber -num $num -spec $_}
+    $SpecifiedNum.keys | sort | %{ $result += GetStringForTimesofSpecifiedNumber $num $_}
 
     if($result -eq ""){
         $result = $num
@@ -15,16 +17,14 @@ function TransferNumIfNeeded($num){
 }
 
 function GetStringForTimesofSpecifiedNumber($num, $spec){
-    switch($spec){
-        3 { if(IsTimesOfSpecifiedNubmer -num $num -spec 3){ return "Fizz" } }
-        5 { if(IsTimesOfSpecifiedNubmer -num $num -spec 5){ return "Buzz" } }
-        7 { if(IsTimesOfSpecifiedNubmer -num $num -spec 7){ return "Whizz" } }
+    if(IsTimesOfSpecifiedNubmer $num $_){
+        return $SpecifiedNum[$_]
     }
 }
 
 function IsTimesOfSpecifiedNubmer($num, $spec){
     if($num % $spec -eq 0){
-        return $spec
+        return $true
     }
     else{
         return $false
