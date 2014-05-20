@@ -3,21 +3,11 @@
 function Say($num){
     $result=""
 
-    $SpecifiedNum.keys | sort | %{ $result += GetStringForTimesofSpecifiedNumber $num $_}
+    $SpecifiedNum.keys | sort | ?{ $num % $_ -eq 0} | %{ $SpecifiedNum[$_] } | %{ $result += $_ }
 
     if($result -eq ""){
         $result = $num
     }
 
     return $result
-}
-
-function GetStringForTimesofSpecifiedNumber($num, $spec){
-    if(IsTimesOfSpecifiedNubmer $num $_){
-        return $SpecifiedNum[$_]
-    }
-}
-
-function IsTimesOfSpecifiedNubmer($num, $spec){
-    return $num % $spec -eq 0
 }
