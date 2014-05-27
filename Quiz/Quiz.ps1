@@ -6,7 +6,6 @@ function Say($num){
     }
 
     $result = [string]::join('', @($SpecifiedNum.keys | sort | ?{ $num % $_ -eq 0} | %{ $SpecifiedNum[$_] }) );
-    # $SpecifiedNum.keys | sort | ?{ ( ($num -like '*3*') -or ($num % $_ -eq 0) } | %{ write-host $_ }
 
     if($result){
         return $result;
