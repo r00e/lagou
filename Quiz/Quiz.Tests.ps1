@@ -15,7 +15,7 @@ Describe "Quiz" {
     It "should return Fizz for the number who has 3"{
         Say 13 | Should Be "Fizz"
         Say 30 | Should Be "Fizz"
-        Say 35 | Should Be "Fizz"
+        Say 135 | Should Be "Fizz"
     }
 
     It "should return Buzz for the times of 5"{
