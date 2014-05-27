@@ -1,11 +1,18 @@
-﻿$SpecifiedNum = @{"3"="Fizz"; "5"="Buzz"; "7"="Whizz"}
+$SpecifiedNum = @{"3"="Fizz"; "5"="Buzz"; "7"="Whizz"}
 
 function Say($num){
-    $result = [string]::join('', @($SpecifiedNum.keys | sort | ?{ $num % $_ -eq 0} | %{ $SpecifiedNum[$_] }) )
-
-    if($result){
-        return $result
+    if($num -like '*3*'){
+        $num = 3;
     }
 
-    return $num
+    $result = [string]::join('', @($SpecifiedNum.keys | sort | ?{ $num % $_ -eq 0} | %{ $SpecifiedNum[$_] }) );
+    # $SpecifiedNum.keys | sort | ?{ ( ($num -like '*3*') -or ($num % $_ -eq 0) } | %{ write-host $_ }
+
+    if($result){
+        return $result;
+    }
+
+    return $num;
 }
+
+# Say 35
